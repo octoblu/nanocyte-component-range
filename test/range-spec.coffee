@@ -85,3 +85,14 @@ describe 'Range', ->
             max: 25
 
         expect(@sut.onEnvelope envelope).to.deep.equal 'pyramid-scheme'
+
+    describe 'when the value is null', ->
+      it 'should return the message', ->
+        envelope =
+          message: 'pyramid-scheme'
+          config:
+            value: null
+            min: 0
+            max: 25
+
+        expect(@sut.onEnvelope envelope).to.be.undefined

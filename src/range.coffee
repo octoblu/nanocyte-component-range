@@ -6,6 +6,8 @@ class Range extends ReturnValue
     {message,config} = envelope
     {value,min,max}  = config
 
+    return unless value?
+
     [typedValue, typedMin, typedMax] = sameType [value, min, max]
 
     return if typedValue > typedMax
